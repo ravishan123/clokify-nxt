@@ -7,6 +7,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
-    alias: { '@': path.resolve(import.meta.dirname, './src') },
+    alias: { "@": path.resolve(import.meta.dirname, "./src") },
   },
-})
+  preview: {
+    port: 3000,
+    strictPort: true, // Prevents Vite from switching ports if 3000 is occupied
+  },
+});
